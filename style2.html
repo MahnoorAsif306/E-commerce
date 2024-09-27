@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .zero {
+            display: inline-block;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        .snack-item {
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .cart-icon-2 {
+            cursor: pointer;
+            color: #007BFF;
+        }
+        .cart-pop-up {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            display: none;
+            z-index: 1;
+            width: 300px;
+        }
+        .cart-pop-up p {
+            margin: 5px 0;
+        }
+        .remove-item {
+            color: red;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <button class="cart" id="btn" ">Cart</button>
+        <i class="fa-solid fa-cart-shopping carticon"></i>
+        <p class="zero" id="cart-count">0</p>
+    </header>
+
+    <div id="api"></div>
+
+    <div class="body1">
+        <div class="snack-item">
+            <img src="./Images/snack1.webp" alt="snack1" class="snack-img">
+            <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+            <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+            <div class="price">
+                <p class="rs">Rs.280.00</p>
+                <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="addToCart('Hilal Bake Time Plain Cake Slices', 280)"></i>
+            </div>
+        </div>
+        <div class="snack-item">
+            <img src="./Images/snack2.webp" alt="snack2" class="snack-img">
+            <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+            <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+            <div class="price">
+                <p class="rs">Rs.200.00</p>
+                <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="addToCart('Hilal Bake Time Plain Cake Slices', 200)"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-pop-up" id="cart-popup">
+        <h3>Cart Items:</h3>
+        <div id="cart-items"></div>
+        <p id="total-price">Total Price: Rs.0.00</p>
+    </div>
+
+    <script>
+        let cartCount = 0;
+        let cartItems = {};
+        let totalPrice = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+
+            if (cartItems[itemName]) {
+                cartItems[itemName].quantity++;
+            } else {
+                cartItems[itemName] = { price: itemPrice, quantity: 1 };
+            }
+            totalPrice += itemPrice;
+        }
+
+        function toggleCart() {
+            const cartPopup = document.getElementById('cart-popup');
+            cartPopup.style.display = cartPopup.style.display === 'block' ? 'none' : 'block';
+            displayCartItems();
+        }
+
+        function displayCartItems() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            for (const item in cartItems) {
+                const { price, quantity } = cartItems[item];
+                cartItemsDiv.innerHTML += `
+                    <p>${item} - Rs.${price} x ${quantity} 
+                        <span class="remove-item" onclick="removeFromCart('${item}')">Remove</span>
+                    </p>`;
+            }
+            document.getElementById('total-price').innerText = `Total Price: Rs.${totalPrice.toFixed(2)}`;
+        }
+
+        function removeFromCart(itemName) {
+            const item = cartItems[itemName];
+            if (item) {
+                totalPrice -= item.price * item.quantity;
+                cartCount -= item.quantity;
+                delete cartItems[itemName];
+                document.getElementById('cart-count').innerText = cartCount;
+            }
+            displayCartItems();
+        }
+
+        async function apiFetch() {
+            try {
+                const response = await fetch('YOUR_API_URL_HERE'); // Replace with your actual API URL
+                const res = await response.json();
+                let show = document.getElementById("api");
+                show.innerHTML = '';
+                for (const item of res) {
+                    const result = item.title;
+                    console.log(result);
+                    show.innerHTML += `<p>${result}</p>`;
+                }
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+            apiFetch();
+            toggleCart();
+        });
+    </script>
+</body>
+</html>

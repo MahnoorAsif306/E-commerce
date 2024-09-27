@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imtiaz-Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="showCart">
+    <header>
+<div class="main"> 
+    <div class="head1">All Express orders will be delivered the same day, Express orders will be considered as Standard after 7pm</div>
+    <div class="head2">
+       <div class="Hbody"> <div class="logo"></div>
+       <input type="text" class="bar" placeholder="Looking for something? Start here...">
+       <a class="home" href="#">Home</a>
+       <div class="Vline"></div>
+       <div class="Vline"></div>
+       <a class="login" href="#">Login</a>
+       <i class="fa-solid fa-user user" ></i>
+       <div class="Vline"></div>
+       <button class="cart" id="btn">Cart</button>
+         <!-- <div class="cart-pop-up">
+        </div> -->
+        <div id="api"  > </div> 
+        <i class="fa-solid fa-cart-shopping carticon"   > </i><p class="zero" id="cart-count">0</p></div>
+        <div class="fbody2">
+            <div> <select name="please select" placeholder="please select" class="Category">
+                <option value="Categories" >Categories</option>
+                <option value="1">Fresh</option>
+                <option value="2">Bakery items</option>
+                <option value="3">Frozen</option>
+                <option value="4">Baby world</option>
+                <option value="5">Health & beauty</option>
+                <option value="6">Confectionary</option>
+                <option value="7">Beverages</option>
+                <option value="8">Edible grocery</option>
+                <option value="9">Pet essentials</option>
+                <option value="10">Pharmacy</option>
+            </select></div>
+            <p class="greet">Welcome to Imtiaz</p>
+        <p class="contact">Call: 021-4289542111</p>
+        </div>
+            
+    </div>
+</div>
+    </header>
+<div class="h1"><h1>Shop by Category</h1></div>
+
+<!-- SLIDER -->
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item"><img src="./Images/bakery.webp" alt="Image 1"><p class="content">Bakery</p></div>
+        <div class="carousel-item"><img src="./Images/beauty.webp" alt="Image 2"><p class="content">Beauty</p></div>
+        <div class="carousel-item"><img src="./Images/beverages.webp" alt="Image 3"><p class="content">Beverages</p></div>
+        <div class="carousel-item"><img src="./Images/pharmacy.webp" alt="Image 4"><p class="content">Pharmacy</p></div>
+        <div class="carousel-item"><img src="./Images/edible grocery.webp" alt="Image 5"><p class="content">Edible grocery</p></div>
+        <div class="carousel-item"><img src="./Images/fresh.webp" alt="Image 6"><p class="content">Fresh</p></div>
+        <div class="carousel-item"><img src="./Images/snacks.webp" alt="Image 7"><p class="content">Snacks</p></div>
+    </div>
+    <button class="carousel-control prev" onclick="prevSlide()">❮</button>
+    <button class="carousel-control next" onclick="nextSlide()">❯</button>
+</div>
+<section>
+    <div class="h2"><h1>Fresh</h1></div>
+    <div class="img1"></div>
+    <div class="body1">
+<div class="snack-item"><img src="./Images/snack1.webp" alt="snack1" class="snack-img">
+    <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+    <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+    <div class="price"><p class="rs">Rs.280.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"  onclick="increaseCartCount()"></i></div>
+</div>
+<div class="snack-item"><img src="./Images/snack2.webp" alt="snack2" class="snack-img">
+<p class="snack-txt">Candyland Jelly ABC Party Pack</p>
+<p class="snack-txt-light">Candyland Jelly ABC Party Pack</p>
+<div class="price"><p class="rs">Rs.200.00 </p>
+    <i class="fa-solid fa-cart-shopping cart-icon-2" -  onclick="increaseCartCount()"></i></div>
+</div>
+<div class="snack-item"><img src="./Images/snack3.webp" alt="snack3"  class="snack-img">
+<p class="snack-txt">Shahi Nimco Savory Mix 100g</p>
+<p class="snack-txt-light">Shahi Nimco Savory Mix 100gs</p>
+  <div class="price"><p class="rs">Rs.150.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"  onclick="increaseCartCount()"></i></div></div>
+<div class="snack-item"> <img src="./Images/snack4.webp" alt="snack4" class="snack-img">
+<p class="snack-txt">LU Wheatable Sugar Free F/P</p>
+<p class="snack-txt-light">LU Wheatable Sugar Free F/P</p>
+  <div class="price"><p class="rs">Rs.80.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"  onclick="increaseCartCount()"></i></div></div>
+<div class="snack-item"> <img src="./Images/snack5.webp" alt="snack5" class="snack-img">
+<p class="snack-txt">Deemah Candy Cute'e Mini 100g</p>
+<p class="snack-txt-light">Deemah Candy Cute'e Mini 100g</p>
+  <div class="price"><p class="rs">Rs.380.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"  onclick="increaseCartCount()"></i></div></div>
+    </div>
+    <div class="h2"><h1>Grocery</h1></div>
+    <div class="img2"></div>
+    <div class="body2">
+<div class="snack-item"><img src="./Images/snack1.webp" alt="snack1" class="snack-img">
+    <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+    <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.600.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack2.webp" alt="snack2" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.320.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack3.webp" alt="snack3"  class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.820.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack4.webp" alt="snack4" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.210.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack5.webp" alt="snack5" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.760.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+    </div>
+    <div class="h2"><h1>Baby world</h1></div>
+    <div class="img3"></div>
+    <div class="body3">
+<div class="snack-item"><img src="./Images/snack1.webp" alt="snack1" class="snack-img">
+    <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+    <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.650.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack2.webp" alt="snack2" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.80.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack3.webp" alt="snack3"  class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.110.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack4.webp" alt="snack4" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.1280.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack5.webp" alt="snack5" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.75.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+    </div>
+    <div class="h2"><h1>Health & Beauty</h1></div>
+    <div class="img4"></div>
+    <div class="body4">
+<div class="snack-item"><img src="./Images/snack1.webp" alt="snack1" class="snack-img">
+    <p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+    <p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.80.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack2.webp" alt="snack2" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.250.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"><img src="./Images/snack3.webp" alt="snack3"  class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.760.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack4.webp" alt="snack4" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.120.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2"onclick="increaseCartCount()"></i></div>
+    </div>
+<div class="snack-item"> <img src="./Images/snack5.webp" alt="snack5" class="snack-img">
+<p class="snack-txt">Hilal Bake Time Plain Cake Slices</p>
+<p class="snack-txt-light">Hilal Bake Time Plain Cake Slices</p>
+  <div class="price"><p class="rs">Rs.70.00</p>
+        <i class="fa-solid fa-cart-shopping cart-icon-2" onclick="increaseCartCount()"></i></div>
+    </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer">
+        <div class="f1">
+            <div class="footlogo"></div>
+        </div>
+    <div class="f2">
+       <h1 class="Fhead">Contact us</h1>
+       <h1 class="Fhead">Phone: <span class="Fcontent">021-4358923111 </span></h1>  
+       <h1 class="Fhead"> Email:<span class="Fcontent"> hello@imtiaz.com.pk</span></h1>
+       <h1 class="Fhead">UAN: <span class="Fcontent">021-111-468-429 (IMT-IAZ) </span></h1>
+       <h1 class="Fhead"> Address: <span class="Fcontent"> Imtiaz -Warehouse Korangi (ISM-KHI-DWH-001), Ponam warehouse : Sector 14, Korangi, Karachii</span></h1>
+       <h1 class="follow">Follow us</h1>
+       <div><i class="fa-brands fa-instagram footicon" ></i>  <i class="fa-brands fa-tiktok footicon" ></i> <i class="fa-brands fa-youtube footicon" ></i></div>
+    </div>
+    <div class="f3">
+        <p class="f3content">Privacy policy</p>
+        <p class="f3content">Return and Exchange Policy</p>
+    </div>
+</div>
+</footer>
+
+   
+    
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

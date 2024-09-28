@@ -51,27 +51,27 @@ let cartCount = 0;
             cartCount--;
             document.getElementById('cart-count').innerText = cartCount;
         }
-        async function apiFetch() {
-            try {
-                const response = await fetch('YOUR_API_URL_HERE'); 
-                const res = await response.json();
-                let show = document.getElementById("api");
-                show.innerHTML = '';
-                for (const item of res) {
-                    const result = item.title;
-                    console.log(result);
-                    show.innerHTML += `<p>${result}</p>`;
-                }
-            } catch (error) {
-                console.error(error.message);
-            }
-        }
-        let btn = document.getElementById("btn");
-        let div = document.getElementById("api");
+        // async function apiFetch() {
+        //     try {
+        //         const response = await fetch('YOUR_API_URL_HERE'); 
+        //         const res = await response.json();
+        //         let show = document.getElementById("api");
+        //         show.innerHTML = '';
+        //         for (const item of res) {
+        //             const result = item.title;
+        //             console.log(result);
+        //             show.innerHTML += `<p>${result}</p>`;
+        //         }
+        //     } catch (error) {
+        //         console.error(error.message);
+        //     }
+        // }
+        // let btn = document.getElementById("btn");
+        // let div = document.getElementById("api");
         
-        btn.addEventListener("click", () => {
-            apiFetch();
-            div.className = "cart-pop-up"; 
+        // btn.addEventListener("click", () => {
+        //     apiFetch();
+        //     div.className = "cart-pop-up"; 
 
-        });
+        // });
 
